@@ -5,7 +5,7 @@ const sha1_output = document.getElementById('sha1-output');
 const sha256_output = document.getElementById('sha256-output');
 const sha512_output = document.getElementById('sha512-output');
 
-function changeText() {
+const changeText = () => {
   let text = text_input.value;
   const md5 = nodeCrypto.createHash('md5').update(text, 'utf8').digest('hex');
   md5_output.innerHTML = md5;
@@ -24,6 +24,6 @@ function changeText() {
     .update(text, 'utf8')
     .digest('hex');
   sha512_output.innerHTML = sha512;
-}
+};
 
-text_input.addEventListener('change', changeText);
+text_input.addEventListener('keydown', changeText);
